@@ -16,7 +16,7 @@ The function `setUSDThresholds` is used to create thresholds for a vote. It can 
         emit USDThresholdUpdated(_approve, _disapprove);
     }
 ```
-```
+
 As we can see function `approveUSDPrice` heavily relies on `APPROVE_THRESHOLD` wich will execute the price update
 
 ```solidity
@@ -30,7 +30,7 @@ As we can see function `approveUSDPrice` heavily relies on `APPROVE_THRESHOLD` w
 
         emit ApprovedUSDPrice(msg.sender);
     }
-```
+
 ```
 The problem is that a malicious admin can set `APPROVE_THRESHOLD` to 6 and a proposal would be impossible to pass. This report is submitted per that the admin is not full trusted as stated by the protocol.
 # PoC
